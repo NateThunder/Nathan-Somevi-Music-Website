@@ -1,40 +1,6 @@
 import Image from "next/image";
 import { Youtube, Instagram, Twitter, Facebook, Music2 } from "lucide-react";
 
-const Navigation = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
-    <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-end">
-      <div className="flex items-center gap-8">
-        <div className="flex items-center gap-6 text-white text-[11px] font-bold uppercase tracking-[0.2em]">
-          <a href="#home" className="hover:text-amber-500 transition-colors">Home</a>
-          <a href="#gigs" className="hover:text-amber-500 transition-colors">Gigs</a>
-          <a href="#music" className="hover:text-amber-500 transition-colors">Music</a>
-          <a href="#videos" className="hover:text-amber-500 transition-colors">Videos</a>
-          <a href="#bio" className="hover:text-amber-500 transition-colors">Bio</a>
-          <a href="#epk" className="hover:text-amber-500 transition-colors">EPK</a>
-        </div>
-        <div className="flex items-center gap-4 border-l border-white/20 pl-6">
-          <a href="https://www.youtube.com/user/somesomevi" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
-            <Youtube size={16} strokeWidth={2.5} />
-          </a>
-          <a href="https://www.instagram.com/nathansomevi/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
-            <Instagram size={16} strokeWidth={2.5} />
-          </a>
-          <a href="https://www.tiktok.com/@nathansomevi" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
-            <Music2 size={16} strokeWidth={2.5} />
-          </a>
-          <a href="https://twitter.com/NSomevi" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
-            <Twitter size={16} strokeWidth={2.5} />
-          </a>
-          <a href="https://www.facebook.com/Nathan-Somevi-102137791151677" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
-            <Facebook size={16} strokeWidth={2.5} />
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-);
-
 const HeroSection = () => (
   <section className="min-h-screen bg-black flex flex-col items-center pt-40 pb-20 px-4 md:px-8 relative overflow-hidden">
     <div className="w-full max-w-6xl flex flex-col items-center relative">
@@ -92,7 +58,6 @@ const ContactSection = () => (
 export default function Home() {
   return (
     <main className="min-h-screen bg-black selection:bg-amber-900 selection:text-white">
-      <Navigation />
       <HeroSection />
       <ContactSection />
     </main>
