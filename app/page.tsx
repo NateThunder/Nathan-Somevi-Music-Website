@@ -1,24 +1,34 @@
 import Image from "next/image";
+import { Youtube, Instagram, Twitter, Facebook, Music2 } from "lucide-react";
 
 const Navigation = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-900 bg-opacity-90 backdrop-blur-sm">
-    <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <span className="text-white font-serif text-sm tracking-widest hidden sm:inline"></span>
+  <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
+    <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-end">
       <div className="flex items-center gap-8">
-        <div className="flex items-center gap-6 text-white text-sm">
-          <a href="#home" className="hover:text-amber-600 transition">Home</a>
-          <a href="#gigs" className="hover:text-amber-600 transition">Gigs</a>
-          <a href="#music" className="hover:text-amber-600 transition">Music</a>
-          <a href="#videos" className="hover:text-amber-600 transition">Videos</a>
-          <a href="#bio" className="hover:text-amber-600 transition">Bio</a>
-          <a href="#lpk" className="hover:text-amber-600 transition">LPK</a>
+        <div className="flex items-center gap-6 text-white text-[11px] font-bold uppercase tracking-[0.2em]">
+          <a href="#home" className="hover:text-amber-500 transition-colors">Home</a>
+          <a href="#gigs" className="hover:text-amber-500 transition-colors">Gigs</a>
+          <a href="#music" className="hover:text-amber-500 transition-colors">Music</a>
+          <a href="#videos" className="hover:text-amber-500 transition-colors">Videos</a>
+          <a href="#bio" className="hover:text-amber-500 transition-colors">Bio</a>
+          <a href="#epk" className="hover:text-amber-500 transition-colors">EPK</a>
         </div>
-        <div className="flex items-center gap-3 border-l border-white/20 pl-6">
-          <a href="#youtube" className="text-white hover:text-amber-600 transition">▶</a>
-          <a href="#insta" className="text-white hover:text-amber-600 transition">📷</a>
-          <a href="#tiktok" className="text-white hover:text-amber-600 transition">🎵</a>
-          <a href="#twitter" className="text-white hover:text-amber-600 transition">𝕏</a>
-          <a href="#facebook" className="text-white hover:text-amber-600 transition">f</a>
+        <div className="flex items-center gap-4 border-l border-white/20 pl-6">
+          <a href="https://www.youtube.com/user/somesomevi" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
+            <Youtube size={16} strokeWidth={2.5} />
+          </a>
+          <a href="https://www.instagram.com/nathansomevi/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
+            <Instagram size={16} strokeWidth={2.5} />
+          </a>
+          <a href="https://www.tiktok.com/@nathansomevi" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
+            <Music2 size={16} strokeWidth={2.5} />
+          </a>
+          <a href="https://twitter.com/NSomevi" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
+            <Twitter size={16} strokeWidth={2.5} />
+          </a>
+          <a href="https://www.facebook.com/Nathan-Somevi-102137791151677" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-500 transition-colors">
+            <Facebook size={16} strokeWidth={2.5} />
+          </a>
         </div>
       </div>
     </div>
@@ -26,50 +36,65 @@ const Navigation = () => (
 );
 
 const HeroSection = () => (
-  <section className="min-h-screen bg-zinc-800 flex flex-col items-center justify-center pt-20 px-4 md:px-8 relative">
-    <div className="w-full max-w-6xl relative">
-      <h1 className="text-center text-5xl md:text-7xl font-serif tracking-wide text-white mb-8 md:mb-12">
+  <section className="min-h-screen bg-black flex flex-col items-center pt-40 pb-20 px-4 md:px-8 relative overflow-hidden">
+    <div className="w-full max-w-6xl flex flex-col items-center relative">
+      <h1 className="text-center text-[8vw] md:text-[120px] font-serif font-black tracking-[-0.05em] text-white mb-16 z-10 leading-[0.8] uppercase">
         NATHAN SOMEVI
       </h1>
       
-      <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] mb-8">
+      <div className="relative w-full aspect-[16/10] md:max-h-[75vh] group shadow-[0_0_100px_rgba(255,255,255,0.05)]">
         <Image
-          src="/nathan-hero.jpg"
-          alt="Nathan Somevi with guitar"
+          src="https://static.wixstatic.com/media/0b48cb_202c25545e7d476e97547772533949b2~mv2.jpg"
+          alt="Nathan Somevi"
           fill
-          className="object-cover"
+          className="object-cover transition-all duration-1000 group-hover:scale-105"
           priority
+          unoptimized
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+
+        <button className="absolute bottom-10 right-10 bg-[#8B4513] hover:bg-[#6D3610] text-white px-10 py-5 rounded-none font-serif italic text-xl transition-all hover:pr-14 hover:shadow-2xl z-20 group">
+          <span>Let&apos;s Chat!</span>
+          <span className="absolute right-4 opacity-0 group-hover:opacity-100 transition-all">→</span>
+        </button>
       </div>
-      
-      <button className="absolute bottom-8 right-8 bg-amber-700 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-medium transition shadow-lg">
-        💬 Let's Chat!
-      </button>
     </div>
   </section>
 );
 
 const ContactSection = () => (
-  <section className="bg-black py-20 px-4 text-center">
-    <h2 className="text-4xl font-serif text-white mb-8 tracking-wide">CONTACT</h2>
-    <p className="text-white text-lg mb-12">manager@nathansomevi.com</p>
+  <section className="bg-black py-40 px-4 text-center">
+    <h2 className="text-[10vw] md:text-[100px] font-serif font-black text-white mb-16 tracking-tighter uppercase">CONTACT</h2>
+    <a href="mailto:manager@nathansomevi.com" className="text-white text-xl md:text-2xl mb-24 block hover:text-amber-500 transition-colors underline decoration-amber-500/50 underline-offset-[12px] decoration-1 font-light tracking-widest">
+      manager@nathansomevi.com
+    </a>
     
-    <div className="flex justify-center gap-6">
-      <a href="#youtube" className="text-white text-3xl hover:text-amber-600 transition">▶</a>
-      <a href="#insta" className="text-white text-3xl hover:text-amber-600 transition">📷</a>
-      <a href="#tiktok" className="text-white text-3xl hover:text-amber-600 transition">🎵</a>
-      <a href="#twitter" className="text-white text-3xl hover:text-amber-600 transition">𝕏</a>
-      <a href="#facebook" className="text-white text-3xl hover:text-amber-600 transition">f</a>
+    <div className="flex justify-center gap-12">
+      <a href="https://www.youtube.com/user/somesomevi" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-all transform hover:-translate-y-2">
+        <Youtube size={36} strokeWidth={1} />
+      </a>
+      <a href="https://www.instagram.com/nathansomevi/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-all transform hover:-translate-y-2">
+        <Instagram size={36} strokeWidth={1} />
+      </a>
+      <a href="https://www.tiktok.com/@nathansomevi" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-all transform hover:-translate-y-2">
+        <Music2 size={36} strokeWidth={1} />
+      </a>
+      <a href="https://twitter.com/NSomevi" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-all transform hover:-translate-y-2">
+        <Twitter size={36} strokeWidth={1} />
+      </a>
+      <a href="https://www.facebook.com/Nathan-Somevi-102137791151677" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-all transform hover:-translate-y-2">
+        <Facebook size={36} strokeWidth={1} />
+      </a>
     </div>
   </section>
 );
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <main className="min-h-screen bg-black selection:bg-amber-900 selection:text-white">
       <Navigation />
       <HeroSection />
       <ContactSection />
-    </div>
+    </main>
   );
 }
