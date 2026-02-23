@@ -1,65 +1,75 @@
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+const Navigation = () => (
+  <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-900 bg-opacity-90 backdrop-blur-sm">
+    <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <span className="text-white font-serif text-sm tracking-widest hidden sm:inline"></span>
+      <div className="flex items-center gap-8">
+        <div className="flex items-center gap-6 text-white text-sm">
+          <a href="#home" className="hover:text-amber-600 transition">Home</a>
+          <a href="#gigs" className="hover:text-amber-600 transition">Gigs</a>
+          <a href="#music" className="hover:text-amber-600 transition">Music</a>
+          <a href="#videos" className="hover:text-amber-600 transition">Videos</a>
+          <a href="#bio" className="hover:text-amber-600 transition">Bio</a>
+          <a href="#lpk" className="hover:text-amber-600 transition">LPK</a>
+        </div>
+        <div className="flex items-center gap-3 border-l border-white/20 pl-6">
+          <a href="#youtube" className="text-white hover:text-amber-600 transition">▶</a>
+          <a href="#insta" className="text-white hover:text-amber-600 transition">📷</a>
+          <a href="#tiktok" className="text-white hover:text-amber-600 transition">🎵</a>
+          <a href="#twitter" className="text-white hover:text-amber-600 transition">𝕏</a>
+          <a href="#facebook" className="text-white hover:text-amber-600 transition">f</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+);
+
+const HeroSection = () => (
+  <section className="min-h-screen bg-zinc-800 flex flex-col items-center justify-center pt-20 px-4 md:px-8 relative">
+    <div className="w-full max-w-6xl relative">
+      <h1 className="text-center text-5xl md:text-7xl font-serif tracking-wide text-white mb-8 md:mb-12">
+        NATHAN SOMEVI
+      </h1>
+      
+      <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] mb-8">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/nathan-hero.jpg"
+          alt="Nathan Somevi with guitar"
+          fill
+          className="object-cover"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+      
+      <button className="absolute bottom-8 right-8 bg-amber-700 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-medium transition shadow-lg">
+        💬 Let's Chat!
+      </button>
+    </div>
+  </section>
+);
+
+const ContactSection = () => (
+  <section className="bg-black py-20 px-4 text-center">
+    <h2 className="text-4xl font-serif text-white mb-8 tracking-wide">CONTACT</h2>
+    <p className="text-white text-lg mb-12">manager@nathansomevi.com</p>
+    
+    <div className="flex justify-center gap-6">
+      <a href="#youtube" className="text-white text-3xl hover:text-amber-600 transition">▶</a>
+      <a href="#insta" className="text-white text-3xl hover:text-amber-600 transition">📷</a>
+      <a href="#tiktok" className="text-white text-3xl hover:text-amber-600 transition">🎵</a>
+      <a href="#twitter" className="text-white text-3xl hover:text-amber-600 transition">𝕏</a>
+      <a href="#facebook" className="text-white text-3xl hover:text-amber-600 transition">f</a>
+    </div>
+  </section>
+);
+
+export default function Home() {
+  return (
+    <div className="bg-black">
+      <Navigation />
+      <HeroSection />
+      <ContactSection />
     </div>
   );
 }
