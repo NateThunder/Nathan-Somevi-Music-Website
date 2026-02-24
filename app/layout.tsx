@@ -24,40 +24,41 @@ export const metadata: Metadata = {
   description: "British-Ghanaian musician Nathan Somevi - Official website for music, tour dates, and more.",
 };
 
-const Navigation = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
-    <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <Link href="/" className="text-xl font-serif tracking-tighter hover:text-amber-500 transition-colors">
-        NS
-      </Link>
-      <div className="flex items-center gap-10">
-        <div className="hidden md:flex items-center gap-8 text-white/70 text-[11px] font-bold uppercase tracking-[0.25em]">
-          <Link href="/" className="hover:text-white transition-colors relative group">
-            Home
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
-          </Link>
-          <Link href="/gigs" className="hover:text-white transition-colors relative group">
-            Gigs
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
-          </Link>
-          <Link href="/music" className="hover:text-white transition-colors relative group">
-            Music
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
-          </Link>
-          <Link href="/videos" className="hover:text-white transition-colors relative group">
-            Videos
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
-          </Link>
-          <Link href="/bio" className="hover:text-white transition-colors relative group">
-            Bio
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
-          </Link>
-          <Link href="/epk" className="hover:text-white transition-colors relative group">
-            EPK
-            <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
-          </Link>
-        </div>
-        <div className="flex items-center gap-4 border-l border-white/10 pl-8">
+const Navigation = () => {
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Link href="/" className="text-xl font-serif tracking-tighter hover:text-amber-500 transition-colors">
+          NS
+        </Link>
+        <div className="flex items-center gap-6 md:gap-10">
+          <div className="hidden lg:flex items-center gap-8 text-white/70 text-[11px] font-bold uppercase tracking-[0.25em]">
+            <Link href="/" className="hover:text-white transition-colors relative group">
+              Home
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
+            </Link>
+            <Link href="/gigs" className="hover:text-white transition-colors relative group">
+              Gigs
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
+            </Link>
+            <Link href="/music" className="hover:text-white transition-colors relative group">
+              Music
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
+            </Link>
+            <Link href="/videos" className="hover:text-white transition-colors relative group">
+              Videos
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
+            </Link>
+            <Link href="/bio" className="hover:text-white transition-colors relative group">
+              Bio
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
+            </Link>
+            <Link href="/epk" className="hover:text-white transition-colors relative group">
+              EPK
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-500 transition-all group-hover:w-full" />
+            </Link>
+          </div>
+          <div className="flex items-center gap-4 lg:border-l lg:border-white/10 lg:pl-8">
           <a href="https://www.youtube.com/user/somesomevi" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
             <Image src="https://static.wixstatic.com/media/7ea344_411993f3503f44609a633604f8b0e797~mv2.png/v1/fill/w_34,h_34,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7ea344_411993f3503f44609a633604f8b0e797~mv2.png" alt="YouTube" width={18} height={18} unoptimized />
           </a>
@@ -71,7 +72,8 @@ const Navigation = () => (
       </div>
     </div>
   </nav>
-);
+  );
+};
 
 export default function RootLayout({
   children,

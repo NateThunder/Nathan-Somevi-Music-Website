@@ -4,48 +4,70 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const HeroSection = () => (
-  <section className="min-h-[90vh] flex flex-col items-center justify-center px-6 relative overflow-hidden">
+  <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    {/* Background Image */}
+    <Image
+      src="https://static.wixstatic.com/media/0b48cb_202c25545e7d476e97547772533949b2~mv2.jpg"
+      alt="Nathan Somevi"
+      fill
+      className="object-cover"
+      priority
+      unoptimized
+    />
+
+    {/* Overlays */}
+    <div className="absolute inset-0 bg-black/40 z-10"></div>
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20 z-10"></div>
+
+    {/* Content */}
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-7xl relative"
+      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      className="relative z-20 text-center px-6"
     >
-      <h1 className="text-center text-[10vw] md:text-[clamp(6rem,12vw,12rem)] font-serif font-black tracking-[-0.07em] text-white z-10 leading-[0.75] uppercase mb-12">
-        NATHAN <br className="md:hidden" /> SOMEVI
+      <motion.span
+        initial={{ opacity: 0, letterSpacing: "0.2em" }}
+        animate={{ opacity: 1, letterSpacing: "0.5em" }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="text-amber-500 uppercase text-xs font-mono mb-6 block"
+      >
+        Artist • Composer • Guitarist
+      </motion.span>
+      <h1 className="text-[12vw] md:text-[clamp(6rem,15vw,15rem)] font-serif font-black tracking-[-0.05em] text-white leading-[0.8] uppercase mb-8">
+        NATHAN <br /> SOMEVI
       </h1>
       
-      <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden group border border-white/10">
-        <Image
-          src="https://static.wixstatic.com/media/0b48cb_202c25545e7d476e97547772533949b2~mv2.jpg"
-          alt="Nathan Somevi"
-          fill
-          className="object-cover transition-transform duration-1000 group-hover:scale-105"
-          priority
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-40"></div>
-
-        <motion.div
-          className="absolute bottom-8 right-8 z-20"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}
+      >
+        <a
+          href="mailto:manager@nathansomevi.com"
+          className="inline-flex items-center gap-4 bg-white text-black px-10 py-5 rounded-full font-sans font-bold text-sm uppercase tracking-[0.2em] transition-all hover:bg-amber-500 hover:text-white group"
         >
-          <a
-            href="mailto:manager@nathansomevi.com"
-            className="bg-white text-black px-8 py-4 rounded-full font-sans font-bold text-xs uppercase tracking-widest transition-all hover:bg-amber-500 hover:text-white flex items-center gap-3"
-          >
-            Let&apos;s Chat
-            <span className="text-lg">→</span>
-          </a>
-        </motion.div>
-      </div>
+          Let&apos;s Chat
+          <span className="text-xl transition-transform group-hover:translate-x-2">→</span>
+        </a>
+      </motion.div>
+    </motion.div>
+
+    {/* Scroll Indicator */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1, duration: 1 }}
+      className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+    >
+      <span className="text-[10px] uppercase tracking-[0.5em] text-white/40 font-mono">Scroll</span>
+      <div className="w-px h-12 bg-gradient-to-b from-amber-500/50 to-transparent"></div>
     </motion.div>
   </section>
 );
 
 const FeaturesSection = () => (
-  <section className="py-32 px-6">
+  <section className="py-32 px-6 bg-black relative z-20">
     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
