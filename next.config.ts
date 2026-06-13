@@ -1,14 +1,10 @@
 import type { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'static.wixstatic.com',
-      },
-    ],
-  },
+  /* config options here */
 };
 
 export default nextConfig;
+
+initOpenNextCloudflareForDev();

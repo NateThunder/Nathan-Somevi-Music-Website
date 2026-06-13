@@ -1,0 +1,41 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nathan-somevi-site",
+  "main": "worker.ts",
+  "compatibility_date": "2026-04-20",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "nathan-somevi-site"
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "nathan-somevi-admin",
+      "database_id": "c9fc2e71-0be3-49f4-8523-01b6b20c8444",
+      "migrations_dir": "./migrations"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "nathansomevi.com/*",
+      "zone_name": "nathansomevi.com"
+    },
+    {
+      "pattern": "www.nathansomevi.com/*",
+      "zone_name": "nathansomevi.com"
+    }
+  ]
+}
