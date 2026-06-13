@@ -1,18 +1,28 @@
 {
-  "name": "nathan-music-website",
+  "name": "nathan-somevi-site",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
+    "cloudflare:build": "opennextjs-cloudflare build",
+    "cloudflare:deploy": "opennextjs-cloudflare deploy -- --keep-vars",
+    "cloudflare:deploy:domain": "opennextjs-cloudflare deploy -- --keep-vars --domains nathansomevi.com --domains www.nathansomevi.com",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "d1:migrate": "wrangler d1 migrations apply nathan-somevi-admin --remote",
+    "d1:migrate:local": "wrangler d1 migrations apply nathan-somevi-admin --local",
+    "cloudflare:d1:migrate": "npm run d1:migrate",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "lucide-react": "^0.575.0",
-    "next": "16.1.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "@opennextjs/cloudflare": "1.19.2",
+    "next": "16.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,8 +30,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "4.84.0"
   }
 }

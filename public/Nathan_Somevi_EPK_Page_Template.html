@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nathan Somevi EPK</title>
+  <style>
+    :root { --bg:#141210; --panel:#201c18; --text:#f6efe2; --muted:#c8bba7; --line:#4d4134; --accent:#d7b46a; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Arial, Helvetica, sans-serif; line-height:1.55; }
+    a { color:var(--accent); text-decoration:none; }
+    .wrap { max-width:1100px; margin:0 auto; padding:28px; }
+    header { min-height:72vh; display:grid; grid-template-columns:1.15fr .85fr; gap:36px; align-items:center; border-bottom:1px solid var(--line); }
+    .eyebrow { color:var(--accent); letter-spacing:.12em; text-transform:uppercase; font-size:13px; }
+    h1 { font-family:Georgia, 'Times New Roman', serif; font-size:clamp(54px, 9vw, 122px); line-height:.9; margin:16px 0; }
+    h2 { font-family:Georgia, 'Times New Roman', serif; font-size:clamp(30px,4vw,52px); margin:0 0 16px; }
+    h3 { margin:0 0 10px; color:var(--accent); }
+    .lead { font-size:clamp(19px,2.2vw,28px); color:var(--muted); max-width:740px; }
+    .photo { min-height:460px; border:1px solid var(--line); background:linear-gradient(135deg,#2a241f,#100e0d); display:flex; align-items:center; justify-content:center; color:var(--muted); text-align:center; padding:28px; }
+    .buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .btn { border:1px solid var(--accent); padding:12px 18px; border-radius:999px; color:var(--text); }
+    .btn.primary { background:var(--accent); color:#17120d; font-weight:700; }
+    section { padding:58px 0; border-bottom:1px solid var(--line); }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+    .card { background:var(--panel); border:1px solid var(--line); padding:24px; border-radius:18px; }
+    ul { padding-left:20px; }
+    .downloads { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .download { border:1px solid var(--line); border-radius:14px; padding:16px; background:#191612; }
+    footer { padding:50px 0 20px; color:var(--muted); }
+    @media (max-width:800px) { header,.grid,.downloads{grid-template-columns:1fr;} .photo{min-height:300px;} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div>
+        <div class="eyebrow">EPK | Glasgow, Scotland</div>
+        <h1>Nathan Somevi</h1>
+        <p class="lead">Guitarist, composer and independent artist blending jazz, Ghanaian rhythm, gospel harmony, R&B colour and improvisation.</p>
+        <div class="buttons">
+          <a class="btn primary" href="[music-link]">Listen</a>
+          <a class="btn" href="[video-link]">Watch live</a>
+          <a class="btn" href="mailto:[public-email]">Book Nathan</a>
+          <a class="btn" href="[download-folder]">Download press kit</a>
+        </div>
+      </div>
+      <div class="photo">Add strongest portrait or live photo here</div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Nathan Somevi is a Glasgow-based guitarist, composer and independent artist creating original music across jazz, Ghanaian rhythm, gospel harmony, R&B colour and improvisation. His sound is built around expressive guitar playing, melodic composition and a deep sense of story, moving between intimate solo textures and dynamic ensemble performance.</p>
+      <p>Originally from Ghana and based in Scotland, Nathan brings together the musical languages that shaped him: church, jazz, African groove, contemporary soul and the lived experience of being an independent artist.</p>
+    </section>
+
+    <section id="music">
+      <h2>Music</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Featured release</h3>
+          <p><strong>[Call You Later / Brave / Can't Be Done]</strong></p>
+          <p>A guitar-led project exploring memory, movement and life expression through jazz harmony, Ghanaian influence and improvisation.</p>
+          <p><a href="[bandcamp-link]">Bandcamp</a> | <a href="[streaming-link]">Streaming</a> | <a href="[press-files-link]">Press/radio files</a></p>
+        </div>
+        <div class="card">
+          <h3>Watch live</h3>
+          <p>Embed your strongest live video here. Prioritise a clip that clearly shows tone, band feel and audience experience.</p>
+          <p><a href="[youtube-link]">Featured live video</a> | <a href="[playlist-link]">Video playlist</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <h2>Selected highlights</h2>
+      <ul>
+        <li>Scottish Jazz Awards Rising Star finalist.</li>
+        <li>SAMA nomination.</li>
+        <li>Featured work on <em>Black Oot Here: Dreams O Us</em>.</li>
+        <li>Performances/projects connected with Glasgow Jazz Festival, Edinburgh Jazz & Blues Festival/EXPO and major Scottish venues.</li>
+        <li>Original releases including <em>Can't Be Done</em> and <em>Brave</em>.</li>
+      </ul>
+    </section>
+
+    <section id="live">
+      <h2>Live formats</h2>
+      <div class="grid">
+        <div class="card"><h3>Solo guitar</h3><p>Intimate guitar-led sets for listening rooms, galleries, churches and smaller venues.</p></div>
+        <div class="card"><h3>Duo / trio</h3><p>Flexible jazz-club format with deeper groove, improvisation and original music.</p></div>
+        <div class="card"><h3>Full band</h3><p>Hybrid guitar, tenor sax, keyboard and drums for festivals, theatres and larger stages.</p></div>
+        <div class="card"><h3>Booking note</h3><p>Sets available from 30 to 90 minutes depending on event format and venue.</p></div>
+      </div>
+    </section>
+
+    <section id="downloads">
+      <h2>Downloads</h2>
+      <div class="downloads">
+        <a class="download" href="[press-photos]">Press photos</a>
+        <a class="download" href="[bio-download]">Bios</a>
+        <a class="download" href="[tech-rider]">Tech rider / stage plot</a>
+        <a class="download" href="[artwork]">Artwork</a>
+        <a class="download" href="[music-files]">Press/radio music files</a>
+        <a class="download" href="[quotes]">Press quotes</a>
+      </div>
+    </section>
+
+    <footer>
+      <h2>Contact</h2>
+      <p>Booking / press: <a href="mailto:[public-email]">[public-email]</a><br />Website: <a href="https://nathansomevi.com">nathansomevi.com</a><br />Location: Glasgow, Scotland</p>
+    </footer>
+  </main>
+</body>
+</html>

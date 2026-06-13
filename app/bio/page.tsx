@@ -1,23 +1,57 @@
-export default function Bio() {
+import Image from "next/image";
+import Link from "next/link";
+import PhotoGallery from "@/components/PhotoGallery";
+import { getAboutContent } from "@/lib/content";
+import { contactInfo, galleryImages, pageHeroImages } from "@/lib/site-data";
+
+export default async function BioPage() {
+  const about = await getAboutContent();
+
   return (
-    <main className="min-h-screen bg-black pt-32 pb-20 px-4">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-white text-5xl md:text-7xl font-serif font-black mb-16 tracking-tighter uppercase text-center">BIO</h1>
-
-        <div className="space-y-8 text-white/80 text-lg md:text-xl leading-relaxed font-light tracking-wide">
-          <p>
-            Nathan Somevi, a Ghanaian-born British musician, honed his musical talents in the vibrant atmosphere of church performances during his upbringing. Inspired by his roots, he embarked on a musical journey enriched by diverse influences. Among his inspirations, the innovative guitar stylings of Charlie Hunter have left an indelible mark on Somevi&apos;s sound, particularly his use of hybrid guitars blending bass and guitar elements, contributing to the captivating essence of his musical projects.
-          </p>
-
-          <p>
-            In 2020, Somevi released his EP &quot;Can&apos;t Be Done,&quot; a testament to his evolving artistry. Following this success, he continued to push boundaries, releasing &quot;Brave&quot; in 2023, further solidifying his position as a versatile and dynamic artist.
-          </p>
-
-          <p>
-            Throughout his career, Somevi&apos;s talent has not gone unnoticed. He was honored with nominations for both the Scottish Alternative Music Award in 2020 and the Scottish Jazz Award in 2023, affirming his impact on the contemporary music scene. While initially recognized for his contributions as a session musician, the challenges presented by the pandemic encouraged Somevi to explore new avenues, leading him to discover the joy of creating his own music and finding fulfillment in expressing his unique musical voice.
-          </p>
+    <>
+      <section className="px-6 pb-20 pt-32 sm:px-8 lg:px-12">
+        <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="space-y-6">
+            <p className="eyebrow">Bio</p>
+            {about.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="section-copy max-w-2xl">
+                {paragraph}
+              </p>
+            ))}
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/music"
+                className="inline-flex min-h-[54px] min-w-[150px] items-center justify-center rounded-[8px] border border-[#e7aa35] bg-[#e7aa35] px-7 text-sm font-extrabold uppercase text-black shadow-none hover:bg-black hover:text-[#e7aa35]"
+              >
+                Listen
+              </Link>
+              <a
+                href={`mailto:${contactInfo.email}`}
+                className="inline-flex min-h-[54px] min-w-[150px] items-center justify-center rounded-[8px] border border-[#e7aa35] bg-[#e7aa35] px-7 text-sm font-extrabold uppercase text-black shadow-none hover:bg-black hover:text-[#e7aa35]"
+              >
+                Email
+              </a>
+            </div>
+          </div>
+          <div className="relative aspect-[1383/2048] w-full overflow-hidden rounded-[8px] border border-white/10">
+            <Image
+              src={pageHeroImages.contact}
+              alt="Nathan Somevi studio portrait."
+              fill
+              sizes="(max-width: 1024px) 100vw, 54vw"
+              className="object-contain"
+            />
+          </div>
         </div>
-      </div>
-    </main>
+      </section>
+
+      <section className="px-6 pb-24 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-6xl">
+          <div>
+            <PhotoGallery images={galleryImages} priorityCount={2} />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
